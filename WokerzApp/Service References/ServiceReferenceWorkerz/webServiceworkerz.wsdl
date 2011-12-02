@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="test" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="test" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="test">
+      <s:element name="GetWorkerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="peopleID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkerDetailsResult" type="tns:WorkerDetailDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="WorkerDetailDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Skills" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MondayHours" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TuesdayHours" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WednesdayHours" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ThursdayHours" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FridayHours" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SaturdayHours" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SundayHours" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Position" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWorkerSkills">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="peopleID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkerSkillsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkerSkillsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkerSched">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="peopleID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkerSchedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkerSchedResult" type="tns:ArrayOfWorkerDays" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWorkerDays">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WorkerDays" type="tns:WorkerDays" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WorkerDays">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Day" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndTime" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserDetails">
+        <s:complexType />
+      </s:element>
+      <s:element name="UserDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserDetailsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCountries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="continent" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCountriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCountriesResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWorkerzInAndOut">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWorkerzInAndOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkerzInAndOutResult" type="tns:ArrayOfWebWorkerz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfWebWorkerz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="WebWorkerz" nillable="true" type="tns:WebWorkerz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WebWorkerz">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PunchedIn" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PeopleID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkerTypeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LocationName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LocationID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StartTime" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="EndTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="StartTimeString" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EndTimeString" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetWorkerzAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWorkerzAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWorkerzAllResult" type="tns:ArrayOfWebWorkerz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WorkerDetailDTO" nillable="true" type="tns:WorkerDetailDTO" />
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfWorkerDays" nillable="true" type="tns:ArrayOfWorkerDays" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="ArrayOfWebWorkerz" nillable="true" type="tns:ArrayOfWebWorkerz" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetWorkerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkerDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSkillsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkerSkills" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSkillsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkerSkillsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSchedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkerSched" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSchedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkerSchedResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:UserDetails" />
+  </wsdl:message>
+  <wsdl:message name="UserDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:UserDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCountries" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerzInAndOutSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkerzInAndOut" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerzInAndOutSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkerzInAndOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerzAllSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWorkerzAll" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerzAllSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWorkerzAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerDetailsHttpGetIn">
+    <wsdl:part name="peopleID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:WorkerDetailDTO" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSkillsHttpGetIn">
+    <wsdl:part name="peopleID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSkillsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSchedHttpGetIn">
+    <wsdl:part name="peopleID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSchedHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfWorkerDays" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UserDetailsHttpGetIn" />
+  <wsdl:message name="UserDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesHttpGetIn">
+    <wsdl:part name="continent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerzInAndOutHttpGetIn" />
+  <wsdl:message name="GetWorkerzInAndOutHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfWebWorkerz" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerzAllHttpGetIn" />
+  <wsdl:message name="GetWorkerzAllHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfWebWorkerz" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerDetailsHttpPostIn">
+    <wsdl:part name="peopleID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:WorkerDetailDTO" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSkillsHttpPostIn">
+    <wsdl:part name="peopleID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSkillsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSchedHttpPostIn">
+    <wsdl:part name="peopleID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerSchedHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfWorkerDays" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UserDetailsHttpPostIn" />
+  <wsdl:message name="UserDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesHttpPostIn">
+    <wsdl:part name="continent" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetCountriesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerzInAndOutHttpPostIn" />
+  <wsdl:message name="GetWorkerzInAndOutHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfWebWorkerz" />
+  </wsdl:message>
+  <wsdl:message name="GetWorkerzAllHttpPostIn" />
+  <wsdl:message name="GetWorkerzAllHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfWebWorkerz" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceWorkerzSoap">
+    <wsdl:operation name="GetWorkerDetails">
+      <wsdl:input message="tns:GetWorkerDetailsSoapIn" />
+      <wsdl:output message="tns:GetWorkerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSkills">
+      <wsdl:input message="tns:GetWorkerSkillsSoapIn" />
+      <wsdl:output message="tns:GetWorkerSkillsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSched">
+      <wsdl:input message="tns:GetWorkerSchedSoapIn" />
+      <wsdl:output message="tns:GetWorkerSchedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array</wsdl:documentation>
+      <wsdl:input message="tns:UserDetailsSoapIn" />
+      <wsdl:output message="tns:UserDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array of countries for a given continent.</wsdl:documentation>
+      <wsdl:input message="tns:GetCountriesSoapIn" />
+      <wsdl:output message="tns:GetCountriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzInAndOut">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array of workerz</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkerzInAndOutSoapIn" />
+      <wsdl:output message="tns:GetWorkerzInAndOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array of all workerz</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkerzAllSoapIn" />
+      <wsdl:output message="tns:GetWorkerzAllSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceWorkerzHttpGet">
+    <wsdl:operation name="GetWorkerDetails">
+      <wsdl:input message="tns:GetWorkerDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetWorkerDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSkills">
+      <wsdl:input message="tns:GetWorkerSkillsHttpGetIn" />
+      <wsdl:output message="tns:GetWorkerSkillsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSched">
+      <wsdl:input message="tns:GetWorkerSchedHttpGetIn" />
+      <wsdl:output message="tns:GetWorkerSchedHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array</wsdl:documentation>
+      <wsdl:input message="tns:UserDetailsHttpGetIn" />
+      <wsdl:output message="tns:UserDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array of countries for a given continent.</wsdl:documentation>
+      <wsdl:input message="tns:GetCountriesHttpGetIn" />
+      <wsdl:output message="tns:GetCountriesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzInAndOut">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array of workerz</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkerzInAndOutHttpGetIn" />
+      <wsdl:output message="tns:GetWorkerzInAndOutHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array of all workerz</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkerzAllHttpGetIn" />
+      <wsdl:output message="tns:GetWorkerzAllHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebServiceWorkerzHttpPost">
+    <wsdl:operation name="GetWorkerDetails">
+      <wsdl:input message="tns:GetWorkerDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetWorkerDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSkills">
+      <wsdl:input message="tns:GetWorkerSkillsHttpPostIn" />
+      <wsdl:output message="tns:GetWorkerSkillsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSched">
+      <wsdl:input message="tns:GetWorkerSchedHttpPostIn" />
+      <wsdl:output message="tns:GetWorkerSchedHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserDetails">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array</wsdl:documentation>
+      <wsdl:input message="tns:UserDetailsHttpPostIn" />
+      <wsdl:output message="tns:UserDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array of countries for a given continent.</wsdl:documentation>
+      <wsdl:input message="tns:GetCountriesHttpPostIn" />
+      <wsdl:output message="tns:GetCountriesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzInAndOut">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array of workerz</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkerzInAndOutHttpPostIn" />
+      <wsdl:output message="tns:GetWorkerzInAndOutHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzAll">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Returns array of all workerz</wsdl:documentation>
+      <wsdl:input message="tns:GetWorkerzAllHttpPostIn" />
+      <wsdl:output message="tns:GetWorkerzAllHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceWorkerzSoap" type="tns:WebServiceWorkerzSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWorkerDetails">
+      <soap:operation soapAction="test/GetWorkerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSkills">
+      <soap:operation soapAction="test/GetWorkerSkills" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSched">
+      <soap:operation soapAction="test/GetWorkerSched" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="test/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDetails">
+      <soap:operation soapAction="test/UserDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap:operation soapAction="test/GetCountries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzInAndOut">
+      <soap:operation soapAction="test/GetWorkerzInAndOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzAll">
+      <soap:operation soapAction="test/GetWorkerzAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceWorkerzSoap12" type="tns:WebServiceWorkerzSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetWorkerDetails">
+      <soap12:operation soapAction="test/GetWorkerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSkills">
+      <soap12:operation soapAction="test/GetWorkerSkills" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSched">
+      <soap12:operation soapAction="test/GetWorkerSched" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="test/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDetails">
+      <soap12:operation soapAction="test/UserDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <soap12:operation soapAction="test/GetCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzInAndOut">
+      <soap12:operation soapAction="test/GetWorkerzInAndOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzAll">
+      <soap12:operation soapAction="test/GetWorkerzAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceWorkerzHttpGet" type="tns:WebServiceWorkerzHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetWorkerDetails">
+      <http:operation location="/GetWorkerDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSkills">
+      <http:operation location="/GetWorkerSkills" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSched">
+      <http:operation location="/GetWorkerSched" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDetails">
+      <http:operation location="/UserDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <http:operation location="/GetCountries" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzInAndOut">
+      <http:operation location="/GetWorkerzInAndOut" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzAll">
+      <http:operation location="/GetWorkerzAll" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceWorkerzHttpPost" type="tns:WebServiceWorkerzHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetWorkerDetails">
+      <http:operation location="/GetWorkerDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSkills">
+      <http:operation location="/GetWorkerSkills" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerSched">
+      <http:operation location="/GetWorkerSched" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserDetails">
+      <http:operation location="/UserDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountries">
+      <http:operation location="/GetCountries" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzInAndOut">
+      <http:operation location="/GetWorkerzInAndOut" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkerzAll">
+      <http:operation location="/GetWorkerzAll" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceWorkerz">
+    <wsdl:port name="WebServiceWorkerzSoap" binding="tns:WebServiceWorkerzSoap">
+      <soap:address location="http://iam.colum.edu/services/webServiceworkerz.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceWorkerzSoap12" binding="tns:WebServiceWorkerzSoap12">
+      <soap12:address location="http://iam.colum.edu/services/webServiceworkerz.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceWorkerzHttpGet" binding="tns:WebServiceWorkerzHttpGet">
+      <http:address location="http://iam.colum.edu/services/webServiceworkerz.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceWorkerzHttpPost" binding="tns:WebServiceWorkerzHttpPost">
+      <http:address location="http://iam.colum.edu/services/webServiceworkerz.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

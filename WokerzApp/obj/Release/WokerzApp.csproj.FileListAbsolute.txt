@@ -1,0 +1,14 @@
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Release\ApplicationIcon.png
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Release\Background.png
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Release\WokerzApp.dll
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Release\WokerzApp.pdb
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Release\AppManifest.xaml
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Release\WokerzApp.xap
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Release\ResolveAssemblyReference.cache
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Release\App.g.i.cs
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Release\DetailsPage.g.i.cs
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Release\MainPage.g.i.cs
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Release\WokerzApp.g.resources
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Release\WokerzApp.dll
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Release\WokerzApp.pdb
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Release\XapCacheFile.xml

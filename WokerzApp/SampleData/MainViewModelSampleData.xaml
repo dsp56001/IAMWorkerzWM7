@@ -1,0 +1,13 @@
+<local:MainViewModel 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WokerzApp" 
+    SampleProperty="Sample Text Property Value">
+    
+    <local:MainViewModel.Items>
+        <local:ItemViewModel  ImageOne="jeff.jpg" Position="Staff" LineOne="Name" LineTwo="Location" LineThree="Time"/>
+        
+        
+    </local:MainViewModel.Items>
+    
+</local:MainViewModel>

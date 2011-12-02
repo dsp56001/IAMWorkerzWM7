@@ -1,0 +1,13 @@
+<local:ItemDetailViewModel 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:WokerzApp" 
+     UserFullName="Jeff Meyers"
+     Email="jmeyers@colum.edu"
+     ImageOne="jeff.jpg"
+     Phone="312 369-7754"
+    >
+
+    
+    
+</local:ItemDetailViewModel>

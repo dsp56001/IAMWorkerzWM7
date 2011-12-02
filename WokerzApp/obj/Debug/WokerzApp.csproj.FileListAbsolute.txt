@@ -1,0 +1,14 @@
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Debug\ApplicationIcon.png
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Debug\Background.png
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Debug\WokerzApp.dll
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Debug\WokerzApp.pdb
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Debug\AppManifest.xaml
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\Bin\Debug\WokerzApp.xap
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Debug\App.g.i.cs
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Debug\DetailsPage.g.i.cs
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Debug\MainPage.g.i.cs
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Debug\WokerzApp.g.resources
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Debug\WokerzApp.dll
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Debug\WokerzApp.pdb
+C:\Users\jeff\Documents\Visual Studio 2010\Projects\WokerzApp\WokerzApp\obj\Debug\XapCacheFile.xml
